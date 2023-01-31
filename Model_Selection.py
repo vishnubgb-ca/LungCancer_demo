@@ -1,6 +1,6 @@
 from Data_Splitting import data_splitting
 from sklearn.ensemble import RandomForestClassifier
-rfr = RandomForestClassifier()
+rfc = RandomForestClassifier()
 from sklearn.neighbors import KNeighborsClassifier
 knc = KNeighborsClassifier()
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
@@ -12,10 +12,10 @@ def model_selection():
     x_train, x_test, y_train, y_test = data_splitting()
     knc.fit(x_train, y_train)
     scores.append(knc.score(x_test, y_test))
-    rfr.fit(x_train, y_train)
-    scores.append(rfr.score(x_test, y_test))
+    rfc.fit(x_train, y_train)
+    scores.append(rfc.score(x_test, y_test))
     print(scores)
-    y_predict = rfr.predict(x_test)
+    y_predict = rfc.predict(x_test)
     precision = precision_score(y_test, y_predict, pos_label='positive', average='micro')
     recall = recall_score(y_test, y_predict, pos_label='positive', average='micro')
     accuracy = accuracy_score(y_test, y_predict)
@@ -23,9 +23,8 @@ def model_selection():
     print("Precision = ", precision)
     print("f1score = ", f1score)
     print("recall = ", recall)
-    print("accuracy = ", accuracy)
-# Creating the pickle file    
+    print("accuracy = ", accuracy)    
     with open("best_model.pkl", 'wb') as p:
-        pickle.dump(rfr,p)
+        pickle.dump(rfc,p)
     return scores
 model_selection()
