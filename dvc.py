@@ -5,8 +5,8 @@ import csv
 
 client = boto3.client(
     's3',
-    aws_access_key_id='AKIA3YG72WSKDULO5WJ4',
-    aws_secret_access_key='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',
+    aws_access_key_id='AKIA3YG72WSKMHCBMTIO',
+    aws_secret_access_key='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',
     region_name='us-east-1'
 )
 
