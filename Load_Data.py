@@ -1,4 +1,4 @@
-import pandas as p
+import pandas as pd
 
 def create_datafarme():
     dataframe = pd.read_csv("Lung_cancer.csv")
