@@ -37,18 +37,13 @@ pipeline{
                 sh 'python3 Feature_Engineering.py'
             }
         }
-        stage("feature selection"){
-            steps{
-                sh 'python3 Feature_Selection.py'
-            }
-        }
         
         
     }
     post{
        
         always {
-            archiveArtifacts artifacts: 'best_model.pkl', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'cleaned.csv', onlyIfSuccessful: true
         }
     }
 }
