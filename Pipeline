@@ -2,16 +2,7 @@ pipeline{
     agent any
 
     stages{
-        stage("Checkout"){
-            steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url:'https://github.com/JyothsnaPendyala/LungCancer_demo.git']]])
-            }
-        }
-        stage("build"){
-            steps{
-                git branch: 'main', url: 'https://github.com/JyothsnaPendyala/LungCancer_demo.git'
-            }
-        }
+       
         stage("load data"){
             steps{
                 sh 'python3 Load_Data.py'
