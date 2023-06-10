@@ -42,21 +42,7 @@ pipeline{
                 sh 'python3 Feature_Selection.py'
             }
         }
-        stage("data versioning"){
-            steps{
-                sh 'python3 dvc.py'
-            }
-        }
-        stage("data splitting"){
-            steps{
-                sh 'python3 Data_Splitting.py'
-            }
-        }
-        stage("model selection"){
-            steps{
-                sh 'python3 Model_Selection.py'
-            }
-        }
+        
         
     }
     post{
