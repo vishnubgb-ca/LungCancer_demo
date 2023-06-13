@@ -34,7 +34,7 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: 'build/cleaned.csv','build/multi_plot_image.pdf', onlyIfSuccessful: true
+            archiveArtifacts artifacts: '*.csv','*.pdf', onlyIfSuccessful: true
         }
     }
 }
