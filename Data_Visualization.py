@@ -7,7 +7,8 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 def data_visualization():
     dataset = data_preprocessing()
-    dataset = dataset.drop(["patient_id", "index"],axis=1)
+    print(dataset.head())
+    dataset = dataset.drop(["patient_id","index"],axis=1)
     for col in dataset.columns:
         if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             fig,ax = plt.subplots(1,1, figsize=(5,4))
@@ -26,7 +27,9 @@ def data_visualization():
     plt.show()
     return dataset
 
-'''def save_image(filename):
+data_visualization()
+
+def save_image(filename):
     p = PdfPages(filename)
     fig_nums = plt.get_fignums()  
     figs = [plt.figure(n) for n in fig_nums]
@@ -38,9 +41,9 @@ def data_visualization():
     p.close()  
   
 # name your Pdf file
-filename = "multi_plot_image.pdf"  '''
-data_visualization()  
+filename = "multi_plot_image.pdf"  
+  
 # call the function
-#save_image(filename) 
+save_image(filename) 
 
 
