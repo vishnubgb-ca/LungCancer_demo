@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 from Data_Preprocessing import data_preprocessing
+from matplotlib.backends.backend_pdf import PdfPages
 
 def data_visualization():
     dataset = data_preprocessing()
