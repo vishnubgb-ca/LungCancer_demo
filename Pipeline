@@ -34,7 +34,7 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: '*.csv','*.pdf'
+            archiveArtifacts artifacts: 'cleaned.csv', onlyIfSuccessful: true
         }
     }
 }
