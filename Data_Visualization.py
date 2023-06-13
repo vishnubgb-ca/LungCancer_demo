@@ -26,7 +26,7 @@ def data_visualization():
     plt.show()
     return dataset
 
-def save_image(filename):
+'''def save_image(filename):
     p = PdfPages(filename)
     fig_nums = plt.get_fignums()  
     figs = [plt.figure(n) for n in fig_nums]
@@ -38,9 +38,9 @@ def save_image(filename):
     p.close()  
   
 # name your Pdf file
-filename = "multi_plot_image.pdf"  
+filename = "multi_plot_image.pdf"  '''
 data_visualization()  
 # call the function
-save_image(filename) 
+#save_image(filename) 
 
 
