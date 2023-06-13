@@ -8,7 +8,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 def data_visualization():
     dataset = data_preprocessing()
     for col in dataset.columns:
-        if (len(dataset[col].unique()) > 5) and (col != 'Level') and (col != 'patient_id') and (col != 'index'):
+        if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             fig,ax = plt.subplots(1,1, figsize=(5,4))
             sns.distplot(x=dataset[col][1:])
             plt.show()
