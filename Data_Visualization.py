@@ -7,6 +7,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 def data_visualization():
     dataset = data_preprocessing()
+    dataset = dataset.drop(["patient_id", "index"],axis=1)
     for col in dataset.columns:
         if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             fig,ax = plt.subplots(1,1, figsize=(5,4))
