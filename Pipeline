@@ -3,27 +3,27 @@ pipeline{
 
     stages{
        
-        stage("load data"){
+        stage("Data Extraction"){
             steps{
                 sh 'python3 Load_Data.py'
             }
         }
-        stage("data analysis"){
+        stage("Data Analysis"){
             steps{
                 sh 'python3 Data_Analysis.py'
             }
         }
-        stage("data preprocessing"){
+        stage("Data Preprocessing"){
             steps{
                 sh 'python3 Data_Preprocessing.py'
             }
         }
-        stage("data visualization"){
+        stage("Data Visualization"){
             steps{
                 sh 'python3 datavisualization.py'
             }
         }
-        stage("feature engineering"){
+        stage("Feature Engineering"){
             steps{
                 sh 'python3 Feature_Engineering.py'
             }
