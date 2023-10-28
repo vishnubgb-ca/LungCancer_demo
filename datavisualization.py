@@ -29,21 +29,21 @@ def data_visualization():
 
 data_visualization()
 
-def save_image(filename):
-    p = PdfPages(filename)
-    fig_nums = plt.get_fignums()  
-    figs = [plt.figure(n) for n in fig_nums]
-    # iterating over the numbers in list
-    for fig in figs:  
-        # and saving the files
-        fig.savefig(p, format='pdf')  
-    # close the object
-    p.close()  
+# def save_image(filename):
+#     p = PdfPages(filename)
+#     fig_nums = plt.get_fignums()  
+#     figs = [plt.figure(n) for n in fig_nums]
+#     # iterating over the numbers in list
+#     for fig in figs:  
+#         # and saving the files
+#         fig.savefig(p, format='pdf')  
+#     # close the object
+#     p.close()  
   
-# name your Pdf file
-filename = "multi_plot_image.pdf"  
+# # name your Pdf file
+# filename = "multi_plot_image.pdf"  
   
-# call the function
-save_image(filename) 
+# # call the function
+# save_image(filename) 
 
 
