@@ -9,7 +9,7 @@ def data_visualization():
     dataset = data_preprocessing()
     print(dataset.head())
     dataset = dataset.drop(["patient_id","index"],axis=1)
-    numerical_features = data.select_dtypes("number").columns
+    numerical_features = dataset.select_dtypes("number").columns
     for col in dataset.columns:
         if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             fig,ax = plt.subplots(1,1, figsize=(5,4))
