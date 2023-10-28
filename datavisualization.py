@@ -9,6 +9,7 @@ def data_visualization():
     dataset = data_preprocessing()
     print(dataset.head())
     dataset = dataset.drop(["patient_id","index"],axis=1)
+    numerical_features = data.select_dtypes("number").columns
     for col in dataset.columns:
         if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             fig,ax = plt.subplots(1,1, figsize=(5,4))
@@ -21,8 +22,9 @@ def data_visualization():
             plt.show()
     # sns.pairplot(dataset)
     # plt.show()
-    cor_mat = dataset.corr()
-    fig = plt.figure(figsize=(15,7))
+    data_num = dataset[numerical_features]
+    cor_mat = data_num.corr()
+    fig = plt.figure(figsize=(12,12))
     sns.heatmap(cor_mat,annot=True)
     plt.show()
     return dataset
