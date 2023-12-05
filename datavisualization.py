@@ -18,7 +18,7 @@ def data_visualization():
         if (len(dataset[col].unique()) > 5) and (col != 'Level'):
             # fig,ax = plt.subplots(1,1, figsize=(5,4))
             count+=1
-            fig = ff.create_distplot([dataset[col][1:],group_labels=[col])
+            fig = ff.create_distplot([dataset[col][1:].values,group_labels=[col])
             fig.update_layout(template='plotly_dark')
             fig.update_xaxes(showgrid=False,zeroline=False)
             fig.update_yaxes(showgrid=False,zeroline=False)
@@ -28,7 +28,7 @@ def data_visualization():
         elif col != 'Level':
             dataset[col] != 'Level'
             count+=1
-            fig = px.bar(dataset[col][1:], x=col, title=f'Count of {col}')
+            fig = px.bar(dataset[1:], x=col, y="counts",color=col)
             fig.update_layout(template='plotly_dark')
             fig.update_xaxes(showgrid=False,zeroline=False)
             fig.update_yaxes(showgrid=False,zeroline=False)
